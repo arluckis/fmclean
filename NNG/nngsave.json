@@ -4,7 +4,8 @@
   "data": [
     {
       "lean": "lemma example1 (x y z : mynat) : x * y + z = x * y + z :=\n",
-      "editorText": ""
+      "isSolved": true,
+      "editorText": "refl,\r\n"
     },
     {
       "lean": "lemma example2 (x y : mynat) (h : y = x + 7) : 2 * y = 2 * (x + 7) :=\n",
@@ -13,11 +14,13 @@
     },
     {
       "lean": "lemma example3 (a b : mynat) (h : succ a = b) : succ(succ(a)) = succ(b) :=\n",
-      "editorText": ""
+      "isSolved": true,
+      "editorText": "rw h,\r\nrefl,"
     },
     {
       "lean": "lemma add_succ_zero (a : mynat) : a + succ(0) = succ(a) :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "rw add_succ,\r\nrw add_zero,\r\nrefl,"
     },
     {
       "lean": "lemma zero_add (n : mynat) : 0 + n = n :=\n",
@@ -26,7 +29,8 @@
     },
     {
       "lean": "lemma add_assoc (a b c : mynat) : (a + b) + c = a + (b + c) :=\n",
-      "editorText": "induction a with c,\r\nrw zero_add,\r\nrw zero_add,\r\nrefl,"
+      "isSolved": true,
+      "editorText": "induction c with d,\r\nrw add_zero,\r\nrw add_zero,\r\nrefl,\r\nrw add_succ,\r\nrw add_succ,\r\nrw add_succ,\r\nrw c_ih,\r\nrefl,"
     },
     {
       "lean": "lemma succ_add (a b : mynat) : succ a + b = succ (a + b) :=\n",
